@@ -16,10 +16,5 @@ class calculator {
     return this.first / this.second;
   }
 }
-let numbers = new calculator(18, 2);
 
-console.log(numbers.addition());
-console.log(numbers.subtract());
-
-console.log(numbers.multiplication());
-console.log(numbers.division());
+export default calculator;

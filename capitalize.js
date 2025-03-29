@@ -9,4 +9,5 @@ function capitalize(string) {
   }
   return newString;
 }
-console.log(capitalize("manish tewatia"));
+
+export default capitalize;

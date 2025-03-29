@@ -47,4 +47,4 @@ function caesarCipher(string, key) {
   return newWord;
 }
 
-console.log(caesarCipher("#####Hello  ,  World  ?  ", 3));
+export default caesarCipher;

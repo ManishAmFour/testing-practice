@@ -6,4 +6,4 @@ function reverseString(string) {
   return newString;
 }
 
-console.log(reverseString("manish"));
+export default reverseString;

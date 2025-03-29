@@ -5,6 +5,10 @@ function analyzeArray(array) {
   });
   let average = total / array.length;
   let sortedArray = sortingArray(array);
+  let min = sortedArray[0];
+  let max = sortedArray[sortedArray.length - 1];
+  let length = sortedArray.length;
+  return { average, max, min, length };
 }
 
 function sortingArray(array) {
@@ -14,20 +18,26 @@ function sortingArray(array) {
   let middleValue = Math.floor(array.length / 2);
   let leftArray = array.splice(0, middleValue);
   let rightArray = array;
+
   let fullArray = sorting(sortingArray(leftArray), sortingArray(rightArray));
-  console.log(fullArray);
+  return fullArray;
 }
 
 function sorting(leftArray, rightArray) {
-  console.log(`${leftArray}:${rightArray}`);
-  /*let entireArray = [];
-  if (leftArray[0] > rightArray[0]) {
-    entireArray.push(rightArray.shift());
-  } else {
-    entireArray.push(leftArray.shift());
+  let entireArray = [];
+
+  let i = 0;
+  while (leftArray.length > 0) {
+    if (leftArray[0] > rightArray[0]) {
+      entireArray.push(rightArray.shift());
+    } else {
+      entireArray.push(leftArray.shift());
+    }
+    i++;
   }
+
   let NewArray = [...entireArray, ...leftArray, ...rightArray];
-  return NewArray;*/
+  return NewArray;
 }
 
-const object = analyzeArray([1, 8, 3, 4, 2, 6]);
+export default analyzeArray;
